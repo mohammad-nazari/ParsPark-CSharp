@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B988F6F-1ED2-4AE0-AD93-F46E553CDACB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExportFileLib</RootNamespace>
+    <AssemblyName>ExportFileLib</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataGridViewPrinter.cs" />
+    <Compile Include="ExportFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="fonts\B Arabics Style_rasekhoon.net.ttf" />
+    <None Include="fonts\B Arash_rasekhoon.net.ttf" />
+    <None Include="fonts\B Aria_rasekhoon.net.ttf" />
+    <None Include="fonts\B Arshia_rasekhoon.net.ttf" />
+    <None Include="fonts\B Aseman Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Aseman_rasekhoon.net.ttf" />
+    <None Include="fonts\B Badkonak_rasekhoon.net.ttf" />
+    <None Include="fonts\B Badr Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Badr_rasekhoon.net.ttf" />
+    <None Include="fonts\B Baran Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Baran Outline Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Baran Outline_rasekhoon.net.ttf" />
+    <None Include="fonts\B Baran_rasekhoon.net.ttf" />
+    <None Include="fonts\B Bardiya Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Bardiya_rasekhoon.net.ttf" />
+    <None Include="fonts\B Cheshmeh Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Cheshmeh_rasekhoon.net.ttf" />
+    <None Include="fonts\B Chini_rasekhoon.net.ttf" />
+    <None Include="fonts\B Compset Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Compset_rasekhoon.net.ttf" />
+    <None Include="fonts\B Davat_rasekhoon.net.ttf" />
+    <None Include="fonts\B Elham_rasekhoon.net.ttf" />
+    <None Include="fonts\B Elm Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Elm Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Elm_rasekhoon.net.ttf" />
+    <None Include="fonts\B Esfehan Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Fantezy_rasekhoon.net.ttf" />
+    <None Include="fonts\B Farnaz_rasekhoon.net.ttf" />
+    <None Include="fonts\B Ferdosi_rasekhoon.net.ttf" />
+    <None Include="fonts\B Haleh Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Haleh_rasekhoon.net.ttf" />
+    <None Include="fonts\B Hamid_rasekhoon.net.ttf" />
+    <None Include="fonts\B Helal_rasekhoon.net.ttf" />
+    <None Include="fonts\B Homa_rasekhoon.net.ttf" />
+    <None Include="fonts\B Jadid Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Jalal Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Jalal_rasekhoon.net.ttf" />
+    <None Include="fonts\B Johar_rasekhoon.net.ttf" />
+    <None Include="fonts\B Kaj_rasekhoon.net.ttf" />
+    <None Include="fonts\B Kamran Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Kamran Outline_rasekhoon.net.ttf" />
+    <None Include="fonts\B Kamran_rasekhoon.net.ttf" />
+    <None Include="fonts\B Karim Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Karim_rasekhoon.net.ttf" />
+    <None Include="fonts\B Kaveh_rasekhoon.net.ttf" />
+    <None Include="fonts\B Kidnap_rasekhoon.net.ttf" />
+    <None Include="fonts\B Koodak Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Koodak Outline_rasekhoon.net.ttf" />
+    <None Include="fonts\B Kourosh_rasekhoon.net.ttf" />
+    <None Include="fonts\B Lotus Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Lotus_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mahsa_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mah_rasekhoon.net.ttf" />
+    <None Include="fonts\B Majid Shadow_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mashhad Bold Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mashhad Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mashhad Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mashhad_rasekhoon.net.ttf" />
+    <None Include="fonts\B Masjed_rasekhoon.net.ttf" />
+    <None Include="fonts\B Medad_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mehr Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mitra Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Mitra_rasekhoon.net.ttf" />
+    <None Include="fonts\B Moj_rasekhoon.net.ttf" />
+    <None Include="fonts\B Morvarid_rasekhoon.net.ttf" />
+    <None Include="fonts\B Narenj_rasekhoon.net.ttf" />
+    <None Include="fonts\B Narm_rasekhoon.net.ttf" />
+    <None Include="fonts\B Nasim Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Nazanin Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Nazanin Outline_rasekhoon.net.ttf" />
+    <None Include="fonts\B Nazanin_rasekhoon.net.ttf" />
+    <None Include="fonts\B Niki Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Niki Border Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Niki Outline Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Niki Outline_rasekhoon.net.ttf" />
+    <None Include="fonts\B Niki Shadow Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Niki Shadow_rasekhoon.net.ttf" />
+    <None Include="fonts\B Nikoo Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Nikoo_rasekhoon.net.ttf" />
+    <None Include="fonts\B Paatch Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Paatch_rasekhoon.net.ttf" />
+    <None Include="fonts\B Rose_rasekhoon.net.ttf" />
+    <None Include="fonts\B Roya Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Roya_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sahar_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sahra_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sara_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sepideh Outline_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sepideh_rasekhoon.net.ttf" />
+    <None Include="fonts\B Setareh Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Setareh_rasekhoon.net.ttf" />
+    <None Include="fonts\B Shadi_rasekhoon.net.ttf" />
+    <None Include="fonts\B Shiraz Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Shiraz_rasekhoon.net.ttf" />
+    <None Include="fonts\B Siavash_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sina Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sooreh Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sooreh_rasekhoon.net.ttf" />
+    <None Include="fonts\B Sorkhpust_rasekhoon.net.ttf" />
+    <None Include="fonts\B Tabssom_rasekhoon.net.ttf" />
+    <None Include="fonts\B Tanab_rasekhoon.net.ttf" />
+    <None Include="fonts\B Tawfig Outline_rasekhoon.net.ttf" />
+    <None Include="fonts\B Tehran Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Tehran_rasekhoon.net.ttf" />
+    <None Include="fonts\B Tir_rasekhoon.net.ttf" />
+    <None Include="fonts\B Titr Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Traffic Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Traffic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Vahid Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Vosta Italic_rasekhoon.net.ttf" />
+    <None Include="fonts\B Vosta_rasekhoon.net.ttf" />
+    <None Include="fonts\B Yagut Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Yagut_rasekhoon.net.ttf" />
+    <None Include="fonts\B Yas Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Yas_rasekhoon.net.ttf" />
+    <None Include="fonts\B Yekan_rasekhoon.net.ttf" />
+    <None Include="fonts\B Zaman_rasekhoon.net.ttf" />
+    <None Include="fonts\B Zar Bold_rasekhoon.net.ttf" />
+    <None Include="fonts\B Zar_rasekhoon.net.ttf" />
+    <None Include="fonts\B Ziba_rasekhoon.net.ttf" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DocX\DocX.csproj">
+      <Project>{e863d072-aa8b-4108-b5f1-785241b37f67}</Project>
+      <Name>DocX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenExcel\OpenExcel.csproj">
+      <Project>{a84e1491-4ef5-47fc-bbdb-8ad0f59100f7}</Project>
+      <Name>OpenExcel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolsLib\ToolsLib.csproj">
+      <Project>{6cdc695b-8c66-42a7-a375-7d048edbfa0a}</Project>
+      <Name>ToolsLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

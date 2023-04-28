@@ -1,0 +1,97 @@
+﻿<?xml version="1.0"?>
+
+<!--
+
+file      : examples/cxx/tree/setting/setting.xsd
+copyright : not copyrighted - public domain
+
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:simpleType name="GlobalHour">
+		<xsd:annotation>
+			<xsd:documentation>
+				Hour is between 0 to 23
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="23"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="GlobalTariffInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Tariff Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Start" type="GlobalHour" default="7">
+			</xsd:element>
+			<xsd:element name="End" type="GlobalHour" default="22">
+			</xsd:element>
+			<xsd:element name="First" type="xsd:int" default="1200">
+			</xsd:element>
+			<xsd:element name="Next" type="xsd:int" default="800">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="GlobalSettingTariff">
+		<xsd:annotation>
+			<xsd:documentation>
+				Tariff Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Day" type="GlobalTariffInfo">
+			</xsd:element>
+			<xsd:element name="Night" type="GlobalTariffInfo">
+			</xsd:element>
+			<xsd:element name="ADay" type="xsd:int" default="8000">
+			</xsd:element>
+			<xsd:element name="Free" type="xsd:int" default="15">
+			</xsd:element>
+			<xsd:element name="Last" type="xsd:int" default="5">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="GlobalSettingParking">
+		<xsd:annotation>
+			<xsd:documentation>
+				Parking Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" default="MyParking">
+			</xsd:element>
+			<xsd:element name="Capacity" type="xsd:int" default="1000">
+			</xsd:element>
+			<xsd:element name="Tariff" type="GlobalSettingTariff">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="GlobalSettings">
+		<xsd:annotation>
+			<xsd:documentation>
+				All settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ParkingSetting" type="GlobalSettingParking">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="ClientGlobalSettings" type="GlobalSettings">
+		<xsd:annotation>
+			<xsd:documentation>
+				The setting attribute is a root of the Setting XML vocabulary.
+				Every conforming document should start with this attribute.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

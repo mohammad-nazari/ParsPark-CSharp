@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="parsparkoModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="blacklist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="license" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="1000" />
+          <Property Name="register" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="car">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="license" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="driverid" Type="uint" Nullable="false" />
+          <Property Name="picture" Type="mediumblob" />
+          <Property Name="register" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="key" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="submit" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="driver">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="lname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="orgname" Type="varchar" MaxLength="100" />
+          <Property Name="orgval" Type="varchar" MaxLength="10" />
+          <Property Name="address" Type="varchar" MaxLength="1000" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="picture" Type="mediumblob" />
+          <Property Name="register" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="enterlogs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="enlicense" Type="varchar" MaxLength="30" />
+          <Property Name="exlicense" Type="varchar" MaxLength="30" />
+          <Property Name="enter" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="exit" Type="datetime" Precision="0" />
+          <Property Name="cost" Type="umediumint" />
+          <Property Name="enpicture" Type="mediumblob" />
+          <Property Name="expicture" Type="mediumblob" />
+          <Property Name="type" Type="enum" Nullable="false" />
+          <Property Name="enuser" Type="uint" />
+          <Property Name="exuser" Type="uint" />
+        </EntityType>
+        <EntityType Name="logs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="enlicense" Type="varchar" MaxLength="30" />
+          <Property Name="exlicense" Type="varchar" MaxLength="30" />
+          <Property Name="enter" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="exit" Type="datetime" Precision="0" />
+          <Property Name="cost" Type="umediumint" />
+          <Property Name="enpicture" Type="mediumblob" />
+          <Property Name="expicture" Type="mediumblob" />
+          <Property Name="type" Type="enum" Nullable="false" />
+          <Property Name="enuser" Type="uint" />
+          <Property Name="exuser" Type="uint" />
+        </EntityType>
+        <EntityType Name="lostcard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cardid" Type="varchar" MaxLength="20" />
+          <Property Name="fname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="lname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="driverID" Type="uint" Nullable="false" />
+          <Property Name="dlicense" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="license" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="type" Type="enum" Nullable="false" />
+          <Property Name="fine" Type="umediumint" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="1000" />
+          <Property Name="submitdate" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="settings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="settings" Type="varchar" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="subscription">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="drivercarid" Type="uint" Nullable="false" />
+          <Property Name="cost" Type="umediumint" Nullable="false" />
+          <Property Name="startdate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="enddate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="register" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="lname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="1000" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="picture" Type="mediumblob" />
+          <Property Name="type" Type="enum" Nullable="false" />
+          <Property Name="register" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="car_ibfk_1">
+          <End Role="driver" Type="Self.driver" Multiplicity="1" />
+          <End Role="car" Type="Self.car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="driver">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="car">
+              <PropertyRef Name="driverid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="subscription_ibfk_1">
+          <End Role="car" Type="Self.car" Multiplicity="1" />
+          <End Role="subscription" Type="Self.subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="car">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="subscription">
+              <PropertyRef Name="drivercarid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="parsparkoModelStoreContainer">
+          <EntitySet Name="blacklist" EntityType="Self.blacklist" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="car" EntityType="Self.car" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="cards" EntityType="Self.cards" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="driver" EntityType="Self.driver" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="enterlogs" EntityType="Self.enterlogs" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="logs" EntityType="Self.logs" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="lostcard" EntityType="Self.lostcard" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="settings" EntityType="Self.settings" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="subscription" EntityType="Self.subscription" Schema="parsparko" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="parsparko" store:Type="Tables" />
+          <AssociationSet Name="car_ibfk_1" Association="Self.car_ibfk_1">
+            <End Role="driver" EntitySet="driver" />
+            <End Role="car" EntitySet="car" />
+          </AssociationSet>
+          <AssociationSet Name="subscription_ibfk_1" Association="Self.subscription_ibfk_1">
+            <End Role="car" EntitySet="car" />
+            <End Role="subscription" EntitySet="subscription" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="parsparkoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="blacklist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="license" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="register" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="car">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="license" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="driverid" Type="Int64" Nullable="false" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="register" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="driver" Relationship="Self.car_ibfk_1" FromRole="car" ToRole="driver" />
+          <NavigationProperty Name="subscription" Relationship="Self.subscription_ibfk_1" FromRole="car" ToRole="subscription" />
+        </EntityType>
+        <EntityType Name="cards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="key" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="submit" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="driver">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="orgname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="orgval" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="register" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="car" Relationship="Self.car_ibfk_1" FromRole="driver" ToRole="car" />
+        </EntityType>
+        <EntityType Name="enterlogs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="enlicense" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="exlicense" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="enter" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="exit" Type="DateTime" />
+          <Property Name="cost" Type="Int32" />
+          <Property Name="enpicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="expicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="enuser" Type="Int64" />
+          <Property Name="exuser" Type="Int64" />
+        </EntityType>
+        <EntityType Name="logs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="enlicense" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="exlicense" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="enter" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="exit" Type="DateTime" />
+          <Property Name="cost" Type="Int32" />
+          <Property Name="enpicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="expicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="enuser" Type="Int64" />
+          <Property Name="exuser" Type="Int64" />
+        </EntityType>
+        <EntityType Name="lostcard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cardid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="driverID" Type="Int64" Nullable="false" />
+          <Property Name="dlicense" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="license" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fine" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="submitdate" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="settings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="settings1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="subscription">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="drivercarid" Type="Int64" Nullable="false" />
+          <Property Name="cost" Type="Int32" Nullable="false" />
+          <Property Name="startdate" Type="DateTime" Nullable="false" />
+          <Property Name="enddate" Type="DateTime" Nullable="false" />
+          <Property Name="register" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="car" Relationship="Self.subscription_ibfk_1" FromRole="subscription" ToRole="car" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="register" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="car_ibfk_1">
+          <End Role="driver" Type="Self.driver" Multiplicity="1" />
+          <End Role="car" Type="Self.car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="driver">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="car">
+              <PropertyRef Name="driverid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="subscription_ibfk_1">
+          <End Role="car" Type="Self.car" Multiplicity="1" />
+          <End Role="subscription" Type="Self.subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="car">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="subscription">
+              <PropertyRef Name="drivercarid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="parsparkoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="blacklist" EntityType="Self.blacklist" />
+          <EntitySet Name="car" EntityType="Self.car" />
+          <EntitySet Name="cards" EntityType="Self.cards" />
+          <EntitySet Name="driver" EntityType="Self.driver" />
+          <EntitySet Name="enterlogs" EntityType="Self.enterlogs" />
+          <EntitySet Name="logs" EntityType="Self.logs" />
+          <EntitySet Name="lostcard" EntityType="Self.lostcard" />
+          <EntitySet Name="settings" EntityType="Self.settings" />
+          <EntitySet Name="subscription" EntityType="Self.subscription" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="car_ibfk_1" Association="Self.car_ibfk_1">
+            <End Role="driver" EntitySet="driver" />
+            <End Role="car" EntitySet="car" />
+          </AssociationSet>
+          <AssociationSet Name="subscription_ibfk_1" Association="Self.subscription_ibfk_1">
+            <End Role="car" EntitySet="car" />
+            <End Role="subscription" EntitySet="subscription" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="parsparkoModelStoreContainer" CdmEntityContainer="parsparkoEntities">
+          <EntitySetMapping Name="blacklist">
+            <EntityTypeMapping TypeName="parsparkoModel.blacklist">
+              <MappingFragment StoreEntitySet="blacklist">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="license" ColumnName="license" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="register" ColumnName="register" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="car">
+            <EntityTypeMapping TypeName="parsparkoModel.car">
+              <MappingFragment StoreEntitySet="car">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="license" ColumnName="license" />
+                <ScalarProperty Name="driverid" ColumnName="driverid" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="register" ColumnName="register" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cards">
+            <EntityTypeMapping TypeName="parsparkoModel.cards">
+              <MappingFragment StoreEntitySet="cards">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="key" ColumnName="key" />
+                <ScalarProperty Name="submit" ColumnName="submit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="driver">
+            <EntityTypeMapping TypeName="parsparkoModel.driver">
+              <MappingFragment StoreEntitySet="driver">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="orgname" ColumnName="orgname" />
+                <ScalarProperty Name="orgval" ColumnName="orgval" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="register" ColumnName="register" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="enterlogs">
+            <EntityTypeMapping TypeName="parsparkoModel.enterlogs">
+              <MappingFragment StoreEntitySet="enterlogs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="enlicense" ColumnName="enlicense" />
+                <ScalarProperty Name="exlicense" ColumnName="exlicense" />
+                <ScalarProperty Name="enter" ColumnName="enter" />
+                <ScalarProperty Name="exit" ColumnName="exit" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="enpicture" ColumnName="enpicture" />
+                <ScalarProperty Name="expicture" ColumnName="expicture" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="enuser" ColumnName="enuser" />
+                <ScalarProperty Name="exuser" ColumnName="exuser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logs">
+            <EntityTypeMapping TypeName="parsparkoModel.logs">
+              <MappingFragment StoreEntitySet="logs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="enlicense" ColumnName="enlicense" />
+                <ScalarProperty Name="exlicense" ColumnName="exlicense" />
+                <ScalarProperty Name="enter" ColumnName="enter" />
+                <ScalarProperty Name="exit" ColumnName="exit" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="enpicture" ColumnName="enpicture" />
+                <ScalarProperty Name="expicture" ColumnName="expicture" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="enuser" ColumnName="enuser" />
+                <ScalarProperty Name="exuser" ColumnName="exuser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lostcard">
+            <EntityTypeMapping TypeName="parsparkoModel.lostcard">
+              <MappingFragment StoreEntitySet="lostcard">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cardid" ColumnName="cardid" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="driverID" ColumnName="driverID" />
+                <ScalarProperty Name="dlicense" ColumnName="dlicense" />
+                <ScalarProperty Name="license" ColumnName="license" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="fine" ColumnName="fine" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="submitdate" ColumnName="submitdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="settings">
+            <EntityTypeMapping TypeName="parsparkoModel.settings">
+              <MappingFragment StoreEntitySet="settings">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="settings1" ColumnName="settings" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subscription">
+            <EntityTypeMapping TypeName="parsparkoModel.subscription">
+              <MappingFragment StoreEntitySet="subscription">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="drivercarid" ColumnName="drivercarid" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="register" ColumnName="register" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="parsparkoModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="register" ColumnName="register" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

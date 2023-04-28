@@ -1,0 +1,1093 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FarsiLibrary.Win</name>
+    </assembly>
+    <members>
+        <member name="T:FarsiLibrary.Utils.About">
+            <summary>
+            About form
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Utils.About.#ctor">
+            <summary>
+            Default constructor for <c>About</c> form.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Utils.About.OnLoad(System.EventArgs)">
+            <summary>
+            Loads default values on form startup.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Utils.About.OnClosing(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Run when user closes the form.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:FarsiLibrary.Utils.SimpleDesigner">
+            <summary>
+            SimpleDisgner class to register various verbs in the environment.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Utils.SimpleDesigner.Verbs">
+            <summary>
+            Adds various designer verbs to environment.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.ErrorShowType">
+            <summary>
+            Different types of how to show errors occured. 
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.ErrorShowType.ShowMessageBox">
+            <summary>
+            Show a MessageBox when an error occurs.
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.ErrorShowType.ShowErrorProvider">
+            <summary>
+            Shows an Error Provider when an error occurs.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiDateTextBox">
+            <summary>
+            <c>FarsiDateTextBox</c> is a visual control to be used on Persian Windows Applications to get a valid date from user.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiDateTextBox.#ctor">
+            <summary>
+            <c>FarsiDateTextBox</c> class constructor. 
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiDateTextBox.ErrorString">
+            <summary>
+            The error string to be displayed when the entry is not valid.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiDateTextBox.FocusAfterError">
+            <summary>
+            Should control get the focus again , after the error is occured.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiDateTextBox.ErrorShowType">
+            <summary>
+            How to show error string.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiDateTextBox.Text">
+            <summary>
+            Default Text of Control.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMessageBoxEx">
+            <summary>
+            An extended MessageBox with lot of customizing capabilities.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.Show">
+            <summary>
+            Shows the message box
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.Show(System.Windows.Forms.IWin32Window)">
+            <summary>
+            Shows the messsage box with the specified owner
+            </summary>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.AddButton(FarsiLibrary.Win.FarsiMessageBoxExButton)">
+            <summary>
+            Add a custom button to the message box
+            </summary>
+            <param name="button">The button to add</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.AddButton(System.String,System.String)">
+            <summary>
+            Add a custom button to the message box
+            </summary>
+            <param name="text">The text of the button</param>
+            <param name="val">The return value in case this button is clicked</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.AddButton(FarsiLibrary.Win.FarsiMessageBoxExButtons)">
+            <summary>
+            Add a standard button to the message box
+            </summary>
+            <param name="button">The standard button to add</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.AddButtons(System.Windows.Forms.MessageBoxButtons)">
+            <summary>
+            Add standard buttons to the message box.
+            </summary>
+            <param name="buttons">The standard buttons to add</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.#ctor">
+            <summary>
+            Ctor is internal because this can only be created by MBManager
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxEx.Dispose">
+            <summary>
+            Called by the manager when it is disposed
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.IsRightToLeft">
+            <summary>
+            Set this property if the control is a FarsiMessageBox. If you want the control to appear in english, set this to false.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.Caption">
+            <summary>
+            Sets the caption of the message box
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.Text">
+            <summary>
+            Sets the text of the message box
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.CustomIcon">
+            <summary>
+            Sets the icon to show in the message box
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.Icon">
+            <summary>
+            Sets the icon to show in the message box
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.Font">
+            <summary>
+            Sets the font for the text of the message box
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.AllowSaveResponse">
+            <summary>
+            Sets or Gets the ability of the  user to save his/her response
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.SaveResponseText">
+            <summary>
+            Sets the text to show to the user when saving his/her response
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.UseSavedResponse">
+            <summary>
+            Sets or Gets wether the saved response if available should be used
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.PlayAlsertSound">
+            <summary>
+            Sets or Gets wether an alert sound is played while showing the message box.
+            The sound played depends on the the Icon selected for the message box
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxEx.SavedResponse">
+            <summary>
+            Gets the selected value from checkbox.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMessageBoxExButton">
+            <summary>
+            Internal DataStructure used to represent a button
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxExButton.Text">
+            <summary>
+            Gets or Sets the text of the button
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxExButton.Value">
+            <summary>
+            Gets or Sets the return value when this button is clicked
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxExButton.HelpText">
+            <summary>
+            Gets or Sets the tooltip that is displayed for this button
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMessageBoxExButton.IsCancelButton">
+            <summary>
+            Gets or Sets wether this button is a cancel button. i.e. the button
+            that will be assumed to have been clicked if the user closes the message box
+            without pressing any button.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMessageBoxExButtons">
+            <summary>
+            Standard MessageBoxEx buttons
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExButtons.Ok">
+            <summary>
+            Ok
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExButtons.Cancel">
+            <summary>
+            Cancel
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExButtons.Yes">
+            <summary>
+            Yes
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExButtons.No">
+            <summary>
+            No
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExButtons.Abort">
+            <summary>
+            Abort
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExButtons.Retry">
+            <summary>
+            Retry
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExButtons.Ignore">
+            <summary>
+            Ignore
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMessageBoxExIcon">
+            <summary>
+            Standard MessageBoxEx icons
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.None">
+            <summary>
+            No icon visible
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Asterisk">
+            <summary>
+            Astrisk icon
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Error">
+            <summary>
+            Error icon
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Exclamation">
+            <summary>
+            Exclamation icon
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Hand">
+            <summary>
+            Hand icon
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Information">
+            <summary>
+            Information icon
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Question">
+            <summary>
+            Question icon
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Stop">
+            <summary>
+            Stop icon
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExIcon.Warning">
+            <summary>
+            Warning icon
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMessageBoxExForm">
+            <summary>
+            An advanced MessageBox that supports customizations like Font, Icon,
+            Buttons and Saved Responses
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExForm._standardIcon">
+            <summary>
+            Used to determine the alert sound to play
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.MeasureString(System.String,System.Int32,System.Drawing.Font)">
+            <summary>
+            Measures a string using the Graphics object for this form with
+            the specified font
+            </summary>
+            <param name="str">The string to measure</param>
+            <param name="maxWidth">The maximum width available to display the string</param>
+            <param name="font">The font with which to measure the string</param>
+            <returns></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.MeasureString(System.String,System.Int32)">
+            <summary>
+            Measures a string using the Graphics object for this form and the
+            font of this form
+            </summary>
+            <param name="str"></param>
+            <param name="maxWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.GetLongestButtonText">
+            <summary>
+            Gets the longest button text
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.SetMessageSizeAndVisibility">
+            <summary>
+            Sets the size and visibility of the Message
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.SetIconSizeAndVisibility">
+            <summary>
+            Sets the size and visibility of the Icon
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.SetCheckboxSizeAndVisibility">
+            <summary>
+            Sets the size and visibility of the save response checkbox
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.GetButtonSize">
+            <summary>
+            Calculates the button size based on the text of the longest
+            button text
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.SetStandardIcon(System.Windows.Forms.MessageBoxIcon)">
+            <summary>
+            Set the icon
+            </summary>
+            <param name="icon"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.CenterForm">
+            <summary>
+            Centers the form on the screen
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.SetOptimumSize">
+            <summary>
+            Sets the optimum size for the form based on the controls that
+            need to be displayed
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.GetWidthOfAllButtons">
+            <summary>
+            Returns the width that will be occupied by all buttons including
+            the inter-button padding
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.GetCaptionWidth">
+            <summary>
+            Gets the width of the caption
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExForm.LayoutControls">
+            <summary>
+            Layout all the controls 
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMessageBoxExManager">
+            <summary>
+            Manages a collection of MessageBoxes. Basically manages the
+            saved response handling for messageBoxes.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.CreateMessageBox(System.String)">
+            <summary>
+            Creates a new message box with the specified name. If null is specified
+            in the message name then the message box is not managed by the Manager and
+            will be disposed automatically after a call to Show()
+            </summary>
+            <param name="name">The name of the message box</param>
+            <returns>A new message box</returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.CreateMessageBox(System.String,System.Boolean)">
+            <summary>
+            Creates a new message box with the specified name. If null is specified
+            in the message name then the message box is not managed by the Manager and
+            will be disposed automatically after a call to Show().
+            Set IsRightToLeft value if the control is a Farsi message box, else set it to false, or use the overloaded method.
+            </summary>
+            <param name="name">The name of the message box</param>
+            <param name="IsRightToLeft">Is it a FarsiMessageBox or it should be in english.</param>
+            <returns>A new message box</returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.GetMessageBox(System.String)">
+            <summary>
+            Gets the message box with the specified name
+            </summary>
+            <param name="name">The name of the message box to retrieve</param>
+            <returns>The message box with the specified name or null if a message box
+            with that name does not exist</returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.DeleteMessageBox(System.String)">
+            <summary>
+            Deletes the message box with the specified name
+            </summary>
+            <param name="name">The name of the message box to delete</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.WriteSavedResponses(System.IO.Stream)">
+            <summary>
+            Save message box values to an stream. This method is not implemented yet.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.ReadSavedResponses(System.IO.Stream)">
+            <summary>
+            Loads message box values from a stream. This method is not implemented yet.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.ResetSavedResponse(System.String)">
+            <summary>
+            Reset the saved response for the message box with the specified name.
+            </summary>
+            <param name="messageBoxName">The name of the message box whose response is to be reset.</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.ResetAllSavedResponses">
+            <summary>
+            Resets the saved responses for all message boxes that are managed by the manager.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.SetSavedResponse(FarsiLibrary.Win.FarsiMessageBoxEx,System.String)">
+            <summary>
+            Set the saved response for the specified message box
+            </summary>
+            <param name="msgBox">The message box whose response is to be set</param>
+            <param name="response">The response to save for the message box</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExManager.GetSavedResponse(FarsiLibrary.Win.FarsiMessageBoxEx)">
+            <summary>
+            Gets the saved response for the specified message box
+            </summary>
+            <param name="msgBox">The message box whose saved response is to be retrieved</param>
+            <returns>The saved response if exists, null otherwise</returns>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMessageBoxExResult">
+            <summary>
+            Results that a FarsiMessageBoxEx control returns.
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExResult.Ok">
+            <summary>
+            string representing an OK
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExResult.Cancel">
+            <summary>
+            string representing a Cancel
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExResult.Yes">
+            <summary>
+            string representing a Yes
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExResult.No">
+            <summary>
+            string representing a No
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExResult.Abort">
+            <summary>
+            string representing an Abort
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExResult.Retry">
+            <summary>
+            string representing a Retry
+            </summary>
+        </member>
+        <member name="F:FarsiLibrary.Win.FarsiMessageBoxExResult.Ignore">
+            <summary>
+            String representing a Ignore
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMessageBoxExResult.GetFarsiMessageBoxExButton(System.String)">
+            <summary>
+            Use this method to get equivalants of each available responses returned by control.
+            </summary>
+            <param name="EnglishButtonText"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiMonthView">
+            <summary>
+            FarsiMonthView control with which you can show months and days, and the end-user can select a date.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMonthView.OnDateSelectionChanged(FarsiLibrary.Win.SelectedDateChangedEventArgs)">
+            <summary>
+            Raised event by invoking delegate.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMonthView.OnMonthSelectionChanged(FarsiLibrary.Win.SelectedDateChangedEventArgs)">
+            <summary>
+            Raised event by invoking delegate.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMonthView.#ctor">
+            <summary>
+            Default constructor. Initializes a new instance of FarsiMonthView.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMonthView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiMonthView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="E:FarsiLibrary.Win.FarsiMonthView.DateSelectionChanged">
+            <summary>
+            DaySelectionChanged occures when user select a new date.
+            </summary>
+        </member>
+        <member name="E:FarsiLibrary.Win.FarsiMonthView.MonthSelectionChanged">
+            <summary>
+            MonthSelectionChanged occurs when user navigates through different months in calendar.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.CalendarSize">
+            <summary>
+            Choose between two available size modes.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.Date">
+            <summary>
+            Currently selected DateTime in calendar control.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.NavigationNextMonthText">
+            <summary>
+            Next month navigation button text.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.NavigationPrevMonthText">
+            <summary>
+            Previous month navigation button text.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.NavigationFont">
+            <summary>
+            Navigation bar font.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.WeekDayFont">
+            <summary>
+            Header Week-Day font.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.CurrentDayFont">
+            <summary>
+            Selected Day font.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.HeaderFont">
+            <summary>
+            Header font.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.DaysFont">
+            <summary>
+            Normal days font.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.HeaderBackColor">
+            <summary>
+            Header section BackColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.DisabledForeColor">
+            <summary>
+            Header section FontColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.DisabledBackColor">
+            <summary>
+            Header section FontColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.HeaderForeColor">
+            <summary>
+            Header section FontColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.WeekDayForeColor">
+            <summary>
+            Week-Day section ForeColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.WeekDayBackColor">
+            <summary>
+            Week-Day section BackColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.NavigationForeColor">
+            <summary>
+            Navigation section ForeColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.NavigationBackColor">
+            <summary>
+            Navigation section BackColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.BorderColor">
+            <summary>
+            Border section ForeColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.NormalDayForeColor">
+            <summary>
+            Normal day ForeColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.NormalDayBackColor">
+            <summary>
+            Normal day BackColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.CurrentDayForeColor">
+            <summary>
+            Current selected date ForeColor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiMonthView.CurrentDayBackColor">
+            <summary>
+            Current selected date BackColor.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiNumericTextBox">
+            <summary>
+            <c>FarsiNumericTextBox</c> is a visual control to accept numbers.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiNumericTextBox.#ctor">
+            <summary>
+            <c>FarsiNumericTextBox</c> class constructor. 
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiNumericTextBox.MaximumNumberLength">
+            <summary>
+            Maximum number of acceptable characters.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiNumericTextBox.Text">
+            <summary>
+            Current text typed in the control.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.FarsiTextBox">
+            <summary>
+            <c>NumericTextBox</c> is a visual Windows Control to accept farsi characters. It uses its own Keyboard-Mapping mechanism which is Iransystem Standard.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.FarsiTextBox.#ctor">
+            <summary>
+            <c>FarsiTextBox</c> class constructor.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.FarsiTextBox.Text">
+            <summary>
+            Default Text of Control.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.IndeterminateProgressBar">
+            <summary>
+            Indeterminate progress bar. use this progress bar when you don't know how many steps you have or how much time the operation takes.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Mandatory constructor. This constructor is required for Windows.Forms class composition designer support.
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.#ctor">
+            <summary>
+            Default constructor. Required for Windows.Forms Class Composition Designer support
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.Start">
+            <summary>
+            Start the progress.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.Stop">
+            <summary>
+            Stop the progress.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.CreateBaseImage">
+            <summary>
+            Creates the base image to be displayed by the control.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paint the control's view in the form.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.PaintPulseIncrement">
+            <summary>
+            Add a new pip to the progress control.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.GeneratePip">
+            <summary>
+            Generate pips of progress bar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.IndeterminateProgressBar.Dispose(System.Boolean)">
+            <summary>
+            Dispose any resources in the memory.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.NumberOfPips">
+            <summary>
+            Number of pips to display
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.PanelWidth">
+            <summary>
+            Panel width
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.PanelHeight">
+            <summary>
+            Panel Height
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.PulseIndex">
+            <summary>
+            Pulse Index
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.FadeIn">
+            <summary>
+            Fade in
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.GMode">
+            <summary>
+            Gradient Mode
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.DarkBorder">
+            <summary>
+            Dark border color
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.LightBorder">
+            <summary>
+            Light border color
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.ImageBase">
+            <summary>
+            Image Base
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.CursorBase">
+            <summary>
+            Cursor bar
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.IsPulsing">
+            <summary>
+            If return is true the bar is currently pulsing, else the bar is in idle state.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.BorderDark">
+            <summary>
+            The color of the dark boarder for each pip.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.BorderLight">
+            <summary>
+            The color of the inner light border for each pip.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.ColorFrom">
+            <summary>
+            The start color for each pip's inner body.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.ColorTo">
+            <summary>
+            The end color for each pip's inner body.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.GradientDirection">
+            <summary>
+            Direction of the gradient within the pip's body.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.Speed">
+            <summary>
+            Speed of the alpha transition between each of the pip's.
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.IndeterminateProgressBar.Pips">
+            <summary>
+            The number of pips to display in the control.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.SelectedDateChangedEventArgs">
+            <summary>
+            FarsiCalendarEvents fired by calendar controls when the currently selected date changes.
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.SelectedDateChangedEventArgs.#ctor(System.DateTime)">
+            <summary>
+            Delegate fire when current date changes in the control.
+            </summary>
+            <param name="SelectedDate"></param>
+        </member>
+        <member name="P:FarsiLibrary.Win.SelectedDateChangedEventArgs.SelectedDate">
+            <summary>
+            Currently selected date in the control.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.Drawing.DontShowFlagAttribute">
+            <summary>
+            This attributes used by Flags editor to detect which flag do not shoiw 
+            in drop down list
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.Drawing.FlagsEditor">
+            <summary>
+            Implements a custom type editor for selecting a <see cref="!:"/> in a list
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.FlagsEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Overrides the method used to provide basic behaviour for selecting editor.
+            Shows our custom control for editing the value.
+            </summary>
+            <param name="context">The context of the editing control</param>
+            <param name="provider">A valid service provider</param>
+            <param name="value">The current value of the object to edit</param>
+            <returns>The new value of the object</returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.FlagsEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Shows a dropdown icon in the property editor
+            </summary>
+            <param name="context">The context of the editing control</param>
+            <returns>Returns <c>UITypeEditorEditStyle.DropDown</c></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.FlagsEditor.OnMouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When got the focus, handle the lost focus event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.FlagsEditor.OnMouseMoved(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Occurs when the mouse is moved over the checkedlistbox. 
+            Sets the tooltip of the item under the pointer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.FlagsEditor.ValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            Close the dropdowncontrol when the user has selected a value
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Overrides the method used to provide basic behaviour for selecting editor.
+            Shows our custom control for editing the value.
+            </summary>
+            <param name="context">The context of the editing control</param>
+            <param name="provider">A valid service provider</param>
+            <param name="value">The current value of the object to edit</param>
+            <returns>The new value of the object</returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Shows a dropdown icon in the property editor
+            </summary>
+            <param name="context">The context of the editing control</param>
+            <returns>Returns <c>UITypeEditorEditStyle.DropDown</c></returns>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.OnMeasureItem(System.Object,System.Windows.Forms.MeasureItemEventArgs)">
+            <summary>
+            Method calculate dropdown item sizes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.OnDrawItem(System.Object,System.Windows.Forms.DrawItemEventArgs)">
+            <summary>
+            Custom draw of items in dropdown control
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.OnMouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            When got the focus, handle the lost focus event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.OnMouseMoved(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Occurs when the mouse is moved over the checkedlistbox. 
+            Sets the tooltip of the item under the pointer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.ValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            Close the dropdowncontrol when the user has selected a value
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.HatchStylesEditor.OnDoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Close dropdown control on double click
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:FarsiLibrary.Win.Drawing.clbItem">
+            <summary>
+            Internal class used for storing custom data in listviewitems
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.clbItem.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            Creates a new instance of the <c>clbItem</c>
+            </summary>
+            <param name="str">The string to display in the <c>ToString</c> method. 
+            It will contains the name of the flag</param>
+            <param name="value">The integer value of the flag</param>
+            <param name="tooltip">The tooltip to display in the <see cref="T:System.Windows.Forms.CheckedListBox"/></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.clbItem.ToString">
+            <summary>
+            Gets the name of this item
+            </summary>
+            <returns>The name passed in the constructor</returns>
+        </member>
+        <member name="P:FarsiLibrary.Win.Drawing.clbItem.Value">
+            <summary>
+            Gets the int value for this item
+            </summary>
+        </member>
+        <member name="P:FarsiLibrary.Win.Drawing.clbItem.Tooltip">
+            <summary>
+            Gets the tooltip for this item
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.GDIUtils.#ctor">
+            <summary>
+            Default Constructor 
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.GDIUtils.#ctor(System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Constructor used to override default colors used by class
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.GDIUtils.Dispose">
+            <summary>
+            Destroy all pens and brushes used by class
+            </summary>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.GDIUtils.Draw3DLine(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Draw 3d Line. 3D Line is a simple line wich contains one dark and one light line.
+            By dark and light line we create optical 3D effect.
+            </summary>
+            <param name="graph">Graphics object which used by function to draw</param>
+            <param name="pnt1">Start point</param>
+            <param name="pnt2">End point</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.GDIUtils.Draw3DBox(System.Drawing.Graphics,System.Drawing.Rectangle,FarsiLibrary.Win.Drawing.Canvas3DStyle)">
+            <summary>
+            Draw 3D box according to style specification. There are four styles which our
+            function know how to draw.
+            </summary>
+            <param name="graph">Graphics object used for drawing</param>
+            <param name="rect">Box rectangle</param>
+            <param name="style">Style of Box</param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.GDIUtils.DrawActiveRectangle(System.Drawing.Graphics,System.Drawing.Rectangle,FarsiLibrary.Win.Drawing.HightlightStyle)">
+            <summary>
+            Draw Active rectangle by blue colors
+            </summary>
+            <param name="graph"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:FarsiLibrary.Win.Drawing.GDIUtils.CalculateCenter(System.Drawing.Rectangle,System.Drawing.Size)">
+            <summary>
+            Calculate X and Y coordiante to place object in center of Rectangle
+            </summary>
+            <param name="rect">Destination Rectangle</param>
+            <param name="sz">Object Size</param>
+            <returns>Point class with X and Y coordinate of center</returns>
+        </member>
+        <member name="T:FarsiLibrary.Win.Drawing.DrawingUtil">
+            <summary>
+            Summary description for GDIUtil.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.Win32.RegistryUtil">
+            <summary>
+            Summary description for Registry.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.BaseClasses.BaseTextBox">
+            <summary>
+            Summary description for BaseTextBox.
+            </summary>
+        </member>
+        <member name="T:FarsiLibrary.Win.BaseClasses.EditorButton">
+            <summary>
+            Summary description for EditorButton.
+            </summary>
+        </member>
+    </members>
+</doc>

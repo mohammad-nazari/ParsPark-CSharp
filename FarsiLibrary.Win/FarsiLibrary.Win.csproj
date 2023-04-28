@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83C3AEB8-5322-4DB6-9E7E-4BF8A319DCE7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FarsiLibrary.Win</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FarsiLibrary.Win</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\out\FarsiLibrary.Win\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\out\FarsiLibrary.Win\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>..\out\FarsiLibrary.Win\FarsiLibrary.Win.XML</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\FarsiLibrary.Resources\FarsiLibrary.Resources.csproj">
+      <Project>{E5575624-4B92-4E51-B98B-20F31FE5B5B4}</Project>
+      <Name>FarsiLibrary.Resources</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\FarsiLibrary.Utils\FarsiLibrary.Utils.csproj">
+      <Name>FarsiLibrary.Utils</Name>
+      <Project>{ED29E567-C801-49E9-8C33-CFB66042B07B}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BaseClasses\DateEditBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\DateTimeCollection.cs" />
+    <Compile Include="Controls\DataGridViewFADateTimePickerColumn.cs" />
+    <Compile Include="Controls\FAContainerComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FADatePickerConverterStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FADatePickerStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FAMonthViewStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\AboutDialogEditor.cs" />
+    <Compile Include="BaseClasses\BaseStyledControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FADatePickerConverter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FADatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\DateTimeCollectionEditor.cs" />
+    <Compile Include="Design\FADatePickerDesigner.cs" />
+    <Compile Include="Design\PersianDateTypeConverter.cs" />
+    <Compile Include="Drawing\FAPainterBase.cs" />
+    <Compile Include="Drawing\FAPainterOffice2000.cs" />
+    <Compile Include="Drawing\FAPainterOffice2003.cs" />
+    <Compile Include="Drawing\FAPainterWindowsXP.cs" />
+    <Compile Include="Drawing\IFAPainter.cs" />
+    <Compile Include="Drawing\Office2003Colors.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Design\FABaseDesigner.cs" />
+    <Compile Include="BaseClasses\BaseControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\FAMonthViewDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\TextEditBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Controls\FAMonthView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FAMessageBoxEx\FAMessageBox.cs" />
+    <Compile Include="FAMessageBoxEx\FAMessageBoxButton.cs" />
+    <Compile Include="FAMessageBoxEx\FAMessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAMessageBoxEx\FAMessageBoxManager.cs" />
+    <Compile Include="FAMessageBoxEx\FAMessageBoxResult.cs" />
+    <Compile Include="FAThemeManager.cs" />
+    <Compile Include="FAPopup\FACustomTopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAPopup\FAHookPopup.cs" />
+    <Compile Include="Controls\FAMonthViewContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAPopup\FAShadow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAPopup\FAShadowManager.cs" />
+    <Compile Include="FAPopup\FATopFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAPopup\FAWinPopupController.cs" />
+    <Compile Include="FAPopup\HookInfo.cs" />
+    <Compile Include="FAPopup\HookManager.cs" />
+    <Compile Include="FAPopup\IHookController.cs" />
+    <Compile Include="FAPopup\IPopupServiceControl.cs" />
+    <Compile Include="Helpers\ControlUtils.cs" />
+    <Compile Include="Controls\NamespaceDoc.cs" />
+    <Compile Include="Win32\Enums.cs" />
+    <Compile Include="Win32\Gdi32.cs" />
+    <Compile Include="Win32\Msgs.cs" />
+    <Compile Include="Win32\Structs.cs" />
+    <Compile Include="Win32\User32.cs" />
+    <EmbeddedResource Include="Design\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FADatePicker.bmp" />
+    <EmbeddedResource Include="Controls\FAMonthView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FADatePickerConverter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagrams\Controls.cd" />
+    <None Include="Diagrams\Painters.cd" />
+    <None Include="Diagrams\Popup.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\DataGridViewFADateTimePickerColumn.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FADatePickerStrip.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FADatePickerConverterStrip.bmp" />
+    <EmbeddedResource Include="Controls\FAMonthViewStrip.bmp" />
+    <EmbeddedResource Include="FAMessageBoxEx\FAMessageBoxForm.resx">
+      <DependentUpon>FAMessageBoxForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

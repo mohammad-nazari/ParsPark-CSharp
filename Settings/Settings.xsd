@@ -1,0 +1,457 @@
+﻿<?xml version="1.0"?>
+
+<!--
+
+file      : examples/cxx/tree/setting/setting.xsd
+copyright : not copyrighted - public domain
+
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:attribute name="Allow">
+		<xsd:annotation>
+			<xsd:documentation>
+				Boolean Yes or No
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="Yes" />
+				<xsd:enumeration value="No" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+  <xsd:attribute name="StartType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Boolean Auto or Manual
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="Auto" />
+        <xsd:enumeration value="Manual" />
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:attribute>
+
+  <xsd:attribute name="SendType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Boolean Board or TCP
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="Board" />
+        <xsd:enumeration value="Tcp" />
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:attribute>
+
+	<xsd:attribute name="AccessType">
+		<xsd:annotation>
+			<xsd:documentation>
+				Boolean Local or Remote
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="Local" />
+				<xsd:enumeration value="Remote" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+	<xsd:simpleType name="Hour">
+		<xsd:annotation>
+			<xsd:documentation>
+				Hour is between 0 to 23
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="0"/>
+			<xsd:maxInclusive value="23"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="TariffInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Tariff Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Start" type="Hour" default="7">
+			</xsd:element>
+			<xsd:element name="End" type="Hour" default="21">
+			</xsd:element>
+			<xsd:element name="First" type="xsd:int" default="1200">
+			</xsd:element>
+			<xsd:element name="Next" type="xsd:int" default="800">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Permission">
+		<xsd:annotation>
+			<xsd:documentation>
+				Permision Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute ref="Allow" default="Yes">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingTariff">
+		<xsd:annotation>
+			<xsd:documentation>
+				Tariff Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Day" type="TariffInfo">
+			</xsd:element>
+			<xsd:element name="Night" type="TariffInfo">
+			</xsd:element>
+			<xsd:element name="ADay" type="xsd:int" default="8000">
+			</xsd:element>
+			<xsd:element name="Free" type="xsd:int" default="15">
+			</xsd:element>
+			<xsd:element name="Last" type="xsd:int" default="5">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingParking">
+		<xsd:annotation>
+			<xsd:documentation>
+				Parking Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" default="MyParking">
+			</xsd:element>
+			<xsd:element name="Capacity" type="xsd:int" default="1000">
+			</xsd:element>
+			<xsd:element name="Tariff" type="SettingTariff">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingANPR">
+		<xsd:annotation>
+			<xsd:documentation>
+				License Plate Recognition Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Enter" type="Permission">
+			</xsd:element>
+			<xsd:element name="Exit" type="Permission">
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="Allow" default="Yes">
+		</xsd:attribute>
+		<xsd:attribute ref="StartType" default="Auto">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingDatabase">
+		<xsd:annotation>
+			<xsd:documentation>
+				Database Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Server" type="xsd:string" default="localhost">
+			</xsd:element>
+			<xsd:element name="Username" type="xsd:string" default="root">
+			</xsd:element>
+			<xsd:element name="Password" type="xsd:string" default="123456">
+			</xsd:element>
+			<xsd:element name="Port" type="xsd:int" default="3306">
+			</xsd:element>
+			<xsd:element name="Database" type="xsd:string" default="parspark">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CameraInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Camera Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="URL" type="xsd:string" default="http://admin:admin@192.168.1.160:80/snap.jpg?usr=admin&amp;pwd=admin">
+			</xsd:element>
+			<xsd:element name="Save" type="xsd:boolean" default="true">
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="Allow" default="Yes">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingCamera">
+		<xsd:annotation>
+			<xsd:documentation>
+				Enter and Exit Camera URL Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Enter" type="CameraInfo">
+			</xsd:element>
+			<xsd:element name="Exit" type="CameraInfo">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingPrinter">
+		<xsd:annotation>
+			<xsd:documentation>
+				Printer Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Lyric" type="xsd:string" default="Sample Lyric">
+			</xsd:element>
+			<xsd:element name="Name" type="xsd:string" default="none">
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="Allow" default="Yes">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="ComPortInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				ComPort Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" default="COM1">
+			</xsd:element>
+			<xsd:element name="BaudRate" type="xsd:int" default="9600">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingCardReader">
+		<xsd:annotation>
+			<xsd:documentation>
+				Printer Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Enter" type="ComPortInfo">
+			</xsd:element>
+			<xsd:element name="Exit" type="ComPortInfo">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ServerInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Server Info of Software
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Address" type="xsd:string" default="127.0.0.1">
+			</xsd:element>
+			<xsd:element name="Port" type="xsd:int" default="50006">
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="Allow" default="Yes">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingSoftware">
+		<xsd:annotation>
+			<xsd:documentation>
+				Printer Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Server" type="ServerInfo">
+			</xsd:element>
+			<xsd:element name="Enter" type="Permission">
+			</xsd:element>
+			<xsd:element name="Exit" type="Permission">
+			</xsd:element>
+			<xsd:element name="Port" type="xsd:int" default="50005">
+			</xsd:element>
+			<xsd:element name="Skin" type="xsd:string" default="default">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="BarrierTypeInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Barrier Open and Close Type Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ActTime" type="xsd:int" default="20">
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="StartType" default="Auto">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="BarrierInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Barrier Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Port" type="ComPortInfo">
+			</xsd:element>
+			<xsd:element name="Open" type="BarrierTypeInfo">
+			</xsd:element>
+			<xsd:element name="Close" type="BarrierTypeInfo">
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="Allow" default="Yes">
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingBarrier">
+		<xsd:annotation>
+			<xsd:documentation>
+				Barrier Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Enter" type="BarrierInfo">
+			</xsd:element>
+			<xsd:element name="Exit" type="BarrierInfo">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="BoardInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Board Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Port" type="ComPortInfo">
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="Allow" default="Yes">
+		</xsd:attribute>
+	</xsd:complexType>
+
+  <xsd:complexType name="SettingCapacity">
+    <xsd:annotation>
+      <xsd:documentation>
+        Board Settings
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ComPort" type="ComPortInfo">
+      </xsd:element>
+      <xsd:element name="Address" type="xsd:string" default="127.0.0.1">
+      </xsd:element>
+      <xsd:element name="Port" type="xsd:int" default="50005">
+      </xsd:element>
+      <xsd:element name="Name" type="xsd:string" default="">
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ref="Allow" default="Yes">
+    </xsd:attribute>
+    <xsd:attribute ref="SendType" default="Tcp">
+    </xsd:attribute>
+  </xsd:complexType>
+
+  <xsd:complexType name="SettingBoard">
+    <xsd:annotation>
+      <xsd:documentation>
+        Board Settings
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Price" type="BoardInfo">
+      </xsd:element>
+      <xsd:element name="Capacity" type="SettingCapacity">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+	<xsd:complexType name="PaymentInfo">
+		<xsd:annotation>
+			<xsd:documentation>
+				Payment Information
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Allow" type="xsd:boolean" default="false">
+			</xsd:element>
+			<xsd:element name="Port" type="ComPortInfo">
+			</xsd:element>
+			<xsd:element name="AutoSend" type="xsd:boolean" default="false">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SettingPayment">
+		<xsd:annotation>
+			<xsd:documentation>
+				Payment Settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CityPay" type="PaymentInfo">
+			</xsd:element>
+			<xsd:element name="POS" type="PaymentInfo">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Settings">
+		<xsd:annotation>
+			<xsd:documentation>
+				All settings
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ParkingSetting" type="SettingParking">
+			</xsd:element>
+			<xsd:element name="ANPRSetting" type="SettingANPR">
+			</xsd:element>
+			<xsd:element name="DatabaseSetting" type="SettingDatabase">
+			</xsd:element>
+			<xsd:element name="CameraSetting" type="SettingCamera">
+			</xsd:element>
+			<xsd:element name="PrinterSetting" type="SettingPrinter">
+			</xsd:element>
+			<xsd:element name="CardReaderSetting" type="SettingCardReader">
+			</xsd:element>
+			<xsd:element name="SoftwareSetting" type="SettingSoftware">
+			</xsd:element>
+			<xsd:element name="BarrierSetting" type="SettingBarrier">
+			</xsd:element>
+			<xsd:element name="BoardSetting" type="SettingBoard">
+			</xsd:element>
+			<xsd:element name="PaymentSetting" type="SettingPayment">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="ClientSettings" type="Settings">
+		<xsd:annotation>
+			<xsd:documentation>
+				The setting attribute is a root of the Setting XML vocabulary.
+				Every conforming document should start with this attribute.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+</xsd:schema>

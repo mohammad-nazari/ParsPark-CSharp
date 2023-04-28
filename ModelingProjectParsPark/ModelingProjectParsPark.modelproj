@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0c8a2502-1d2b-4865-9563-2caf56c9febf}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>ModelingProjectParsPark</Name>
+    <RootNamespace>ModelingProjectParsPark</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="UMLClassDiagramParsPark.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLClassDiagramParsPark.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLClassDiagramParsPark.classdiagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\ModelingProjectParsPark.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CameraLib\CameraLib.csproj">
+      <Name>CameraLib</Name>
+      <Project>{bb58477a-b3b2-4849-9515-3aa169978aa0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\CardReader2Lib\CardReaderExitLib.csproj">
+      <Name>CardReaderExitLib</Name>
+      <Project>{a133cdfb-d95a-47b9-b81f-0887fdcdaf99}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\CardReader\CardReaderEnterLib.csproj">
+      <Name>CardReaderEnterLib</Name>
+      <Project>{3a25ff52-cde9-4a17-8fe5-729bb4442587}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBaseLib\DataBaseLib.csproj">
+      <Name>DataBaseLib</Name>
+      <Project>{1c662d34-ebfe-4bdf-a35f-f970dce6e1c2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DataGridViewNumericUpDownElements\DataGridViewNumericUpDownElements.csproj">
+      <Name>DataGridViewNumericUpDownElements</Name>
+      <Project>{82b50731-be90-433f-bb6e-9b509c5f3b7c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\datetimeselector\DateTimeSelector.csproj">
+      <Name>DateTimeSelector</Name>
+      <Project>{e0296f96-cdfe-465c-a2ab-024a55765493}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DocX\DocX.csproj">
+      <Name>DocX</Name>
+      <Project>{e863d072-aa8b-4108-b5f1-785241b37f67}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportFileLib\ExportFileLib.csproj">
+      <Name>ExportFileLib</Name>
+      <Project>{9b988f6f-1ed2-4ae0-ad93-f46e553cdacb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GridViewCheckBoxColumn\GridViewCheckBoxColumn.csproj">
+      <Name>GridViewCheckBoxColumn</Name>
+      <Project>{0edb5ff6-cb2a-43ae-a0c9-84514a54fa4a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ImageLib\ImageLib.csproj">
+      <Name>ImageLib</Name>
+      <Project>{6c82324b-fa15-4049-906d-fdccbe3f5ea6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ManagedOpenSsl\ManagedOpenSsl.csproj">
+      <Name>ManagedOpenSsl</Name>
+      <Project>{73dcc218-655b-485f-8eac-0ce5f2f7343d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenExcel\OpenExcel.csproj">
+      <Name>OpenExcel</Name>
+      <Project>{a84e1491-4ef5-47fc-bbdb-8ad0f59100f7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PrinterLib\PrinterLib.csproj">
+      <Name>PrinterLib</Name>
+      <Project>{019bd7d5-a6a4-4421-8790-debf3e021e21}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SecurityLib\SecurityLib.csproj">
+      <Name>SecurityLib</Name>
+      <Project>{e815658f-107e-4156-9c37-b1ac12a7fbbb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SerialPortLib\SerialPortLib.csproj">
+      <Name>SerialPortLib</Name>
+      <Project>{a177ccf3-ad45-4d09-a059-b79a4922befa}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Settings\SettingsLib.csproj">
+      <Name>SettingsLib</Name>
+      <Project>{03ea48f0-75f0-4608-acce-b5de1befdc33}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ToolsLib\ToolsLib.csproj">
+      <Name>ToolsLib</Name>
+      <Project>{6cdc695b-8c66-42a7-a375-7d048edbfa0a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WebServiceLib\WebServiceLib.csproj">
+      <Name>WebServiceLib</Name>
+      <Project>{8e3a72ba-ce0b-4144-85e1-7587296140c9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
